@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+//python -m grpc_tools.protoc -I . --python_out=. --grpc_python_out=. quorum.proto
+
+package quorum;
+
+service Quorum {
+  rpc InitQuorum (QuorumConfig) returns (InitQuorumResponse) {}
+  rpc Write (Request) returns (Response) {}
+  rpc Read (Request) returns (Response) {}
+}
+
+message QuorumConfig {
+  int32 N = 1;
+  int32 Nr = 2;
+  int32 Nw = 3;
+}
+
+message InitQuorumResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message Request {
+  string key = 1;
+  string value = 2;
+}
+
+message Response {
+  bool success = 1;
+  string message = 2;
+  string value = 3;
+  int64 timestamp = 4;
+}
