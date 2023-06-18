@@ -75,3 +75,9 @@ Enter `exit` to stop the client.
 ### Conclusion
 
 I hope this guide was useful in understanding and running this GRPC Python learning project. I'd be happy to receive any suggestions or improvements. Enjoy exploring GRPC!
+
+
+### References
+
+[Python gRPC Tutorial by MissCoding](https://www.youtube.com/watch?v=WB37L7PjI5k&t=188s)
+[Distributed Systems (LTAT.06.007)](https://courses.cs.ut.ee/2023/ds/spring/Main/Guide0)
