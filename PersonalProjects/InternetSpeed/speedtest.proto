@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package speedtest;
+
+service SpeedTest {
+  rpc Test(stream SpeedRequest) returns (stream SpeedResponse) {}
+}
+
+message SpeedRequest {
+  string message = 1;
+}
+
+message SpeedResponse {
+  string message = 1;
+}
