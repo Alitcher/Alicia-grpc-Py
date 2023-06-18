@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ex1;
+
+//service definition
+service ex1
+{
+    rpc HelloWorld (HelloRequest) returns (HelloResponse); //unary
+    rpc ClientStream (stream HelloRequest) returns ( DelayResponse); // client
+    rpc ServerStream ( HelloRequest) returns (stream HelloResponse); //server
+    rpc BidirectionalStream (stream HelloRequest) returns (stream HelloResponse); //bi
+}
+
+message HelloRequest
+{
+    string name = 1;
+}
+
+message HelloResponse
+{
+    bool status = 1;
+}
+
+message DelayResponse {
+	string message = 1;
+	repeated HelloRequest request = 2;
+}
